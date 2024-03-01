@@ -15,7 +15,7 @@ export const Categories = () => {
       <ul>
         {categories?.map((category) => (
           <li key={category}>
-            {category}
+            {/* {category} */}
             {<Link to={`/recipes?category=${category}`}>{category}</Link> }
           </li>
         ))}
