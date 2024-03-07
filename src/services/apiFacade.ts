@@ -31,6 +31,12 @@ async function getCategories(): Promise<Array<string>> {
   categories = [...res];
   return categories;
 }
+
+async function addCategory(newCategory: string) { 
+  const options = makeOptions("POST", null, true);
+  fetch(CATEGORIES_URL+ "/"+newCategory, options).then(handleHttpErrors);
+}
+
 async function getRecipes(category: string | null): Promise<Array<Recipe>> {
   //if (recipes.length > 0) return [...recipes];
   console.log("category", category);
@@ -58,4 +64,4 @@ async function getInfo(): Promise<Info> {
 
 export type { Recipe, Info };
 // eslint-disable-next-line react-refresh/only-export-components
-export { getCategories, getRecipes, getRecipe, addRecipe, deleteRecipe, getInfo };
+export { getCategories, getRecipes, getRecipe, addRecipe, deleteRecipe, getInfo, addCategory };

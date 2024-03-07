@@ -9,7 +9,7 @@ export function makeOptions(method: string, body: object | null, addToken?: bool
         method: method,
         headers: {
             "Content-type": "application/json",
-            Accept: "application/json",
+            "Accept": "application/json",
         },
     };
     if (body) {
